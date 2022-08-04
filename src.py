@@ -48,7 +48,10 @@ def path_walker():
 
         for file in files:
             if file != sys.argv[0]:
-                manage_file(f"{root}/{file}")
+                try:
+                    manage_file(f"{root}/{file}")
+                except:
+                    continue
 
 
 def main():
